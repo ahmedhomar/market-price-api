@@ -1,6 +1,9 @@
 package com.ahmedomar.marketpriceapi;
 
 
+import com.opencsv.bean.CsvBindByPosition;
+import com.opencsv.bean.CsvDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,14 +15,24 @@ public class Price {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
+    @CsvBindByPosition(position = 0)
     private Long id;
+
+    @CsvBindByPosition(position = 1)
     private String Name;
+
+    @CsvBindByPosition(position = 2)
     private double bid;
+
+    @CsvBindByPosition(position = 3)
     private double ask;
+
+    @CsvBindByPosition(position = 4)
+    @CsvDate("dd-MM-yyyy HH:mm:ss:SSS") // format of the date in the csv file
     private Date timestamp;
 
 
-    //    Getters and Setters
+    //Getters and Setters
 
     public Long getId() {
         return id;
