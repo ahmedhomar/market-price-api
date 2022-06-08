@@ -5,11 +5,11 @@ package com.ahmedomar.marketpriceapi;
 
 public class PriceFeedReader {
 
-    private Repository repository;
-    private Service service;
+    private PriceRepository repository;
+    private PriceService service;
 
     //Constructor
-    public PriceFeedReader(Repository repository, Service service) {
+    public PriceFeedReader(PriceRepository repository, PriceService service) {
         this.repository = repository;
         this.service = service;
     }

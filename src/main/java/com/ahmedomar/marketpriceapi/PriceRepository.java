@@ -1,10 +1,13 @@
 package com.ahmedomar.marketpriceapi;
 
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
+@Repository
 
-public interface RepositoryInterface {
+public interface PriceRepository extends JpaRepository<Price, Integer> {
 
     public List<Price> findAllPrices();
 
@@ -15,4 +18,7 @@ public interface RepositoryInterface {
     public Price findLowestPriceByName(String name);
 
     public List<Price> findAllPricesByName(String name);
+
+
 }
+

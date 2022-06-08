@@ -1,9 +1,9 @@
 package com.ahmedomar.marketpriceapi;
 
 public class Controller {
-    Repository repository;
+    PriceRepository repository;
 
-    public Controller(Repository repository) {
+    public Controller(PriceRepository repository) {
         this.repository = repository;
     }
 

@@ -1,12 +1,33 @@
 package com.ahmedomar.marketpriceapi;
 
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class Repository implements RepositoryInterface {
+public class PriceService {
+
+
+    public Price applyPriceMechanics(Price price) {
+        price = adjustBidPX(price);
+        price = adjustAskPX(price);
+
+        return price;
+    }
+
+    private static Price adjustBidPX(Price price) {
+        double valueSubtract = (price.getBid() * 0.001);
+        price.setBid(price.getBid() - valueSubtract);
+
+        return price;
+    }
+
+    private static Price adjustAskPX(Price price) {
+        double valueAdd = (price.getAsk() * 0.001);
+        price.setAsk(price.getAsk() + valueAdd);
+
+        return price;
+    }
 
     //Store prices in this List containing all prices
     private static List<Price> allPrices = new ArrayList<>();
@@ -39,4 +60,3 @@ public class Repository implements RepositoryInterface {
 
 
 }
-
