@@ -1,6 +1,6 @@
 # Market Price API
 
-## Background
+### Background
 
 This is a RESTful API created in Spring Boot for a Market Price Handler Exercise.
 
@@ -29,13 +29,13 @@ The market price feed  is provided in CSV format line by line for EUR/USD, GBP/U
 110, EUR/JPY, 119.61,119.91,01-06-2020 12:01:02:110
 
 
-## Features
+### Features
 
 •	Each message is a CSV string.
 •	With an incoming price, process each with a margin (add commission) function, assume it is simply  -0.1% on bid, +0.1% on ask (subtract from bid, add to ask).
 •	The adjusted price is published to a REST endpoint
 
-## Testing
+### Testing
 ### Unit testing 
 
 Test frameworks (JUnit and Mockito) are used to test the following:
@@ -48,7 +48,7 @@ Test frameworks (JUnit and Mockito) are used to test the following:
 
 ### End-to-end testing
 
-## Assumptions
+### Assumptions
 
 
 

@@ -22,13 +22,11 @@ public class PriceFeedReader {
     }
     public void onMessage(String message) {
         try {
-            Price price = CsvFeedHandler.convertCsvToPrice(message);
+            Price price = CsvFeedHandler.getPriceFromCsv(message);
             price = service.applyPriceMechanics(price);
             publishPrice(price);
         } catch (IllegalStateException e) {
             System.out.println("Error in parsing message");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         }
     }
 
