@@ -6,22 +6,22 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-@Repository
 
+@Repository
 public interface PriceRepository extends JpaRepository<Price, Integer> {
 
-    //Store prices in this List containing all prices
+    //Store prices in this List containing all prices until the database is implemented
     static List<Price> allPrices = new ArrayList<>();
 
-    public List<Price> findAllPrices();
+    public List<Price> findAllPrices();  //return all prices
 
-    public Price getLatestPrice();
+    public Price getLatestPrice(); //return the latest price
 
-    public Price getPriceById(Long id);
+    public Price getPriceById(Long id); //return a specific price
 
-    public Price findLowestPriceByName(String name);
+    public Price findLowestPriceByName(String name); //return the lowest price of a currency
 
-    public List<Price> findAllPricesByName(String name);
+    public List<Price> findAllPricesByName(String name); //return all prices of a currency
 
 
 }

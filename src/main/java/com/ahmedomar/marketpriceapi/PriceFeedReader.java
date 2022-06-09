@@ -20,15 +20,21 @@ public class PriceFeedReader {
         this.repository = repository;
         this.service = service;
     }
+
     public void onMessage(String message) {
-        try {
-            Price price = CsvFeedHandler.getPriceFromCsv(message);
-            price = service.applyPriceMechanics(price);
-            publishPrice(price);
-        } catch (IllegalStateException e) {
-            System.out.println("Error in parsing message");
+        try {  //try to parse the message
+            Price price = CsvFeedHandler.getPriceFromCsv(message);  //get the price from the message
+            price = service.applyPriceMechanics(price); //apply price mechanics
+            publishPrice(price); //publish the price
+        } catch (IllegalStateException e) { //if the message is not in the correct format, ignore it
+            System.out.println("Error in parsing message");  //print error message
         }
     }
+
+    /**
+     * Publish the price to the repository
+     * Ideally, the prices would be published to a database, but for the sake of simplicity, I will publish them to the repository
+     **/
 
     private void publishPrice(Price price) {
         repository.findAllPrices().add(price);

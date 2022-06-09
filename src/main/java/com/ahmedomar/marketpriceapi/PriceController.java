@@ -22,39 +22,39 @@ public class PriceController {
 //    GET requests
 
     //get the LATEST price from ALL currencies:
-    @GetMapping("/price-latest")
-    @ResponseBody
+    @GetMapping("/price-latest") //http://localhost:8080/price-latest
+    @ResponseBody //returns the response body as a string
     public ResponseEntity<Price> getLatestPrice() {
         return ResponseEntity.status(HttpStatus.OK).body(service.getLatestPrice());
 
     }
 //get all prices from all currencies:
 
-    @GetMapping("/price-all")
+    @GetMapping("/price-all") //http://localhost:8080/price-all
     @ResponseBody
-    private List<Price> getAllPrices() {
-        return service.findAllPrices();
+    public ResponseEntity<List<Price>> getAllPrices() {
+        return ResponseEntity.status(HttpStatus.OK).body(service.findAllPrices());
     }
 
     //get a specific price:
-    @GetMapping("/price/{id}")
+    @GetMapping("/price/{id}") //http://localhost:8080/price/1
     @ResponseBody
-    private Price getPriceById(Long id) {
-        return service.getPriceById(id);
+    public ResponseEntity<Price> getPriceById(Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(service.getPriceById(id));
     }
 
     //get the lowest price of a currency:
-    @GetMapping("/price-lowest/{name}")
+    @GetMapping("/price-lowest/{name}") //http://localhost:8080/price-lowest/USD
     @ResponseBody
-    private Price getLowestPriceByName(String name) {
-        return service.findLowestPriceByName(name);
+    public ResponseEntity<Price> getLowestPriceByName(String name) {
+        return ResponseEntity.status(HttpStatus.OK).body(service.findLowestPriceByName(name));
     }
 
     //get all prices of a currency:
-    @GetMapping("/price-all/{name}")
+    @GetMapping("/price-all/{name}") //http://localhost:8080/price-all/USD
     @ResponseBody
-    private List<Price> getAllPricesByName(String name) {
-        return service.findAllPricesByName(name);
+    public ResponseEntity<List<Price>> getAllPricesByName(String name) {
+        return ResponseEntity.status(HttpStatus.OK).body(service.findAllPricesByName(name));
     }
 
 

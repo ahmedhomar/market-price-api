@@ -15,6 +15,12 @@ public class Price {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
+    /*
+     * Each column in the .csv file is associated with a field in the bean.
+     *  We can perform the mappings between .csv column headings using the @CsvBindByPosition
+     *, which specifies a mapping by position.
+     */
+
     @CsvBindByPosition(position = 0)
     private Long id;
 
