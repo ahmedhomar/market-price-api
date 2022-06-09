@@ -19,10 +19,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PriceTest {
 
     @Autowired
-    private PriceRepository repository;
+    private PriceRepository repository; //repository is a mock object that is used to test the controller
 
     @Autowired
-    private PriceFeedReader priceFeedReader;
+    private PriceFeedReader priceFeedReader; //priceFeedReader is a mock object that is used to test the controller
 
     @Before
     public void setUp() {
@@ -60,8 +60,8 @@ public class PriceTest {
         repository.findAllPrices().clear(); //clear the list of prices
 
         priceFeedReader.onMessage(entry106); //publish the price
-        assertEquals(1.0999, repository.findAllPrices().get(0).getBid());
-        assertEquals(1.2011, repository.findAllPrices().get(0).getAsk());
+        assertEquals(1.0999, repository.findAllPrices().get(0).getBid()); //check that the bid is correct
+        assertEquals(1.2011, repository.findAllPrices().get(0).getAsk()); //check that the ask is correct
 
     }
 

@@ -1,11 +1,7 @@
 package com.ahmedomar.marketpriceapi;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import com.ahmedomar.marketpriceapi.CsvFeedHandler;
-
-import java.io.FileNotFoundException;
 
 @Component
 public class PriceFeedReader {
