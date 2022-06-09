@@ -50,6 +50,12 @@ The market price feed  is provided in CSV format line by line for EUR/USD, GBP/U
 •	Each incoming price is processed with a margin (commission) function, (-0.1% on bid, +0.1% on ask, subtract from bid, add to ask).
 •	The adjusted price is published to a REST endpoint
 
+![SCR-20220609-p11](https://user-images.githubusercontent.com/97477828/172903648-b58bd57f-3fd7-43b3-9ee4-2bbe5a2a388c.png)
+
+
+![SCR-20220609-p1e](https://user-images.githubusercontent.com/97477828/172903768-da024a4c-ff16-4acb-b19c-e12f52210b52.png)
+
+
 ### Testing
 
 #### Unit testing 
