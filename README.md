@@ -1,11 +1,17 @@
 # Market Price API
 
 ### Background
-
-This is a RESTful API created in Spring Boot for a Market Price Handler Exercise.
-
-It is a simple application that allows users to connect to a FX price feed of spot prices from the market. It modifies each price by applying a margin adjustment to it.
+This is a simple price handler that should be able to read prices from a Csv file. It modifies each price by applying a margin adjustment to it.
 The new price is then made available to clients/components, so that they can get the latest price for an instrument whenever they request it.
+
+The code is presented using the following technologies:
+
+- Maven
+- Spring-Boot 
+- Java 
+- JUnit
+- Mockito
+- MySQL
 
 The Model for this API is Price, which consists of unique id, instrument name, bid, ask and timestamp. From the brief for the exercise, I have assumed that 'bid' means the sell price and that 'ask' is the buy price (which is higher than the bid).
 The market price feed  is provided in CSV format line by line for EUR/USD, GBP/USD and EUR/JPY. For example:
@@ -36,7 +42,7 @@ The market price feed  is provided in CSV format line by line for EUR/USD, GBP/U
 •	The adjusted price is published to a REST endpoint
 
 ### Testing
-### Unit testing 
+#### Unit testing 
 
 Test frameworks (JUnit and Mockito) are used to test the following:
 

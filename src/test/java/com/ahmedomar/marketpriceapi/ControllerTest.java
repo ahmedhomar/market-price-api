@@ -36,7 +36,7 @@ public class ControllerTest {
         Price price = new Price();
         price.setBid(1.0999);
         price.setAsk(1.2011);
-        price.setId(1L);
+        price.setId(106L);
         price.setName("EUR/USD");
         repository.findAllPrices().add(price);
 
@@ -47,7 +47,8 @@ public class ControllerTest {
         String response = mockMvc.perform(get("/latest/EUR/USD"))
                 .andExpect(status().isOk())
                 .andReturn().getResponse().getContentAsString();
-        assertEquals("{\"id\":1,\"name\":\"EUR/USD\",\"bid\":1.0999,\"ask\":1.2011}", response);
+        assertEquals("{\"id\":106,\"name\":\"EUR/USD\",\"bid\":1.0999,\"ask\":1.2011}", response);
+        System.out.println(response);
     }
 
 }
