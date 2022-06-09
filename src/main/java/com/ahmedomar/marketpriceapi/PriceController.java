@@ -22,7 +22,7 @@ public class PriceController {
 //    GET requests
 
     //get the LATEST price from ALL currencies:
-    @GetMapping("/price-latest") //http://localhost:8080/price-latest
+    @GetMapping("/price-latest")
     @ResponseBody //returns the response body as a string
     public ResponseEntity<Price> getLatestPrice() {
         return ResponseEntity.status(HttpStatus.OK).body(service.getLatestPrice());
@@ -30,28 +30,28 @@ public class PriceController {
     }
 //get all prices from all currencies:
 
-    @GetMapping("/price-all") //http://localhost:8080/price-all
+    @GetMapping("/price-all")
     @ResponseBody
     public ResponseEntity<List<Price>> getAllPrices() {
         return ResponseEntity.status(HttpStatus.OK).body(service.findAllPrices());
     }
 
     //get a specific price:
-    @GetMapping("/price/{id}") //http://localhost:8080/price/1
+    @GetMapping("/price/{id}")
     @ResponseBody
     public ResponseEntity<Price> getPriceById(Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(service.getPriceById(id));
     }
 
     //get the lowest price of a currency:
-    @GetMapping("/price-lowest/{name}") //http://localhost:8080/price-lowest/USD
+    @GetMapping("/price-lowest/{name}")
     @ResponseBody
     public ResponseEntity<Price> getLowestPriceByName(String name) {
         return ResponseEntity.status(HttpStatus.OK).body(service.findLowestPriceByName(name));
     }
 
     //get all prices of a currency:
-    @GetMapping("/price-all/{name}") //http://localhost:8080/price-all/USD
+    @GetMapping("/price-all/{name}")
     @ResponseBody
     public ResponseEntity<List<Price>> getAllPricesByName(String name) {
         return ResponseEntity.status(HttpStatus.OK).body(service.findAllPricesByName(name));

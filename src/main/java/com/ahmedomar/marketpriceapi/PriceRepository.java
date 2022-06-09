@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public interface PriceRepository extends JpaRepository<Price, Integer> {
+public interface PriceRepository extends JpaRepository<Price, Long> {
 
     //Store prices in this List containing all prices until the database is implemented
     static List<Price> allPrices = new ArrayList<>();
