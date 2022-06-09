@@ -8,7 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class MarketPriceApiApplicationTests {
 
 	@Test
-	void contextLoads() {  //test if the application is running
+	void contextLoads() {//test if the application is running
+		System.out.println("Application is running");
 	}
 
 
